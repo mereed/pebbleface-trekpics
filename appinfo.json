@@ -1,0 +1,377 @@
+{
+    "appKeys": {
+        "background": 5,
+        "bluetoothvibe": 1,
+        "format": 8,
+        "hourlyvibe": 2,
+        "icon": 0,
+        "steps_status": 7,
+        "temperature": 3
+    },
+    "capabilities": [
+        "location",
+        "configurable"
+    ],
+    "companyName": "chops",
+    "enableMultiJS": false,
+    "longName": "trekpics",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/new4.png",
+                "name": "IMAGE_BG23",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/new3.png",
+                "name": "IMAGE_BG34",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/new2.png",
+                "name": "IMAGE_BG9",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/jemhadar.png",
+                "name": "IMAGE_BG17",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/new.png",
+                "name": "IMAGE_BG40",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/birdofprey2.png",
+                "name": "IMAGE_BG7",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/bt_on.png",
+                "name": "IMAGE_BLUETOOTH",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/starfleet.png",
+                "name": "IMAGE_BG12",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/sphere.png",
+                "name": "IMAGE_BG33",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/voyager2.png",
+                "name": "IMAGE_BG32",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nx01.png",
+                "name": "IMAGE_BG22",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/3MARK.png",
+                "name": "IMAGE_3MARK",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/9MARK.png",
+                "name": "IMAGE_9MARK",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/batt-trans.png",
+                "name": "IMAGE_BATT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ds9.png",
+                "name": "IMAGE_BG30",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/voyager.png",
+                "name": "IMAGE_BG10",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/cube.png",
+                "name": "IMAGE_BG5",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/warbird.png",
+                "name": "IMAGE_BG6",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/enterprise-a.png",
+                "name": "IMAGE_BG39",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/defiant.png",
+                "name": "IMAGE_BG24",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/reliant.png",
+                "name": "IMAGE_BG16",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/birdofprey.png",
+                "name": "IMAGE_BG15",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ENTERPRISE-D.png",
+                "name": "IMAGE_BG14",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/BADGE.png",
+                "name": "IMAGE_BG2",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/GRID.png",
+                "name": "IMAGE_BG19",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/nobtgrey.png",
+                "name": "IMAGE_BLUETOOTH_OFF",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/lcars.ttf",
+                "name": "FONT_CUSTOM_16",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/lcars.ttf",
+                "name": "FONT_CUSTOM_25",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/lcars.ttf",
+                "name": "FONT_CUSTOM_22",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "characterRegex": "[0-9:]",
+                "file": "fonts/lcars.ttf",
+                "name": "FONT_CUSTOM_78",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/2.png",
+                "name": "CLEAR_DAY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/6.png",
+                "name": "WINDY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/7.png",
+                "name": "COLD",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/18.png",
+                "name": "RAIN",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/23.png",
+                "name": "SNOW",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/24.png",
+                "name": "HAIL",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/27.png",
+                "name": "STORM",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/9.png",
+                "name": "PARTLY_CLOUDY_NIGHT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/3.png",
+                "name": "CLEAR_NIGHT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/8.png",
+                "name": "PARTLY_CLOUDY_DAY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/25.png",
+                "name": "CLOUDY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/13.png",
+                "name": "HAZE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/FOG.png",
+                "name": "FOG",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/14.png",
+                "name": "CLOUD",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/45.png",
+                "name": "NA",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/themes-menu.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "targetPlatforms": [
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "trekpics",
+    "targetPlatforms": [
+        "chalk"
+    ],
+    "uuid": "e20a05ff-8947-4b72-b910-8ffdc99f72aa",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
