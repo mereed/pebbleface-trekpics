@@ -2,10 +2,10 @@
     "appKeys": {
         "background": 5,
         "bluetoothvibe": 1,
-        "format": 8,
+        "format": 7,
         "hourlyvibe": 2,
         "icon": 0,
-        "steps_status": 7,
+        "steps_status": 6,
         "temperature": 3
     },
     "capabilities": [
@@ -18,6 +18,13 @@
     "projectType": "native",
     "resources": {
         "media": [
+            {
+                "file": "images/menu.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
             {
                 "file": "images/new4.png",
                 "name": "IMAGE_BG23",
@@ -351,26 +358,17 @@
                 "name": "NA",
                 "targetPlatforms": null,
                 "type": "bitmap"
-            },
-            {
-                "file": "images/themes-menu.png",
-                "menuIcon": true,
-                "name": "IMAGE_MENU_ICON",
-                "targetPlatforms": [
-                    "basalt",
-                    "chalk"
-                ],
-                "type": "bitmap"
             }
         ]
     },
     "sdkVersion": "3",
     "shortName": "trekpics",
     "targetPlatforms": [
+        "basalt",
         "chalk"
     ],
     "uuid": "e20a05ff-8947-4b72-b910-8ffdc99f72aa",
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }

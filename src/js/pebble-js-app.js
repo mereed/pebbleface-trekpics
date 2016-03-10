@@ -74,7 +74,6 @@ if (options === null) options = { "use_gps" : "true",
 									"background" : "",
 									"bluetoothvibe" : "false",
 									"hourlyvibe" : "false",
-									"seconds" : "false",
 								 	"format" : "",
 									"steps_status" : "false"};
 
@@ -159,7 +158,6 @@ function getWeatherFromWoeid(woeid) {
 			"background" : options["background"],
 			"bluetoothvibe" : (options["bluetoothvibe"] == "true" ? 1 : 0),
             "hourlyvibe" : (options["hourlyvibe"] == "true" ? 1 : 0),
-            "seconds" : (options["seconds"] == "true" ? 1 : 0),
 			"format" : options["format"],
 			"steps_status" : (options["steps_status"] == "true" ? 0 : 1 ),
 
@@ -208,7 +206,6 @@ Pebble.addEventListener('showConfiguration', function(e) {
     '&units=' + encodeURIComponent(options['units']) +
 	'&bluetoothvibe=' + encodeURIComponent(options['bluetoothvibe']) +
     '&hourlyvibe=' + encodeURIComponent(options['hourlyvibe']) +
-    '&seconds=' + encodeURIComponent(options['seconds']) +
     '&background=' + encodeURIComponent(options['background']) +
     '&format=' + encodeURIComponent(options['format']) +
     '&steps_status=' + encodeURIComponent(options['steps_status']);

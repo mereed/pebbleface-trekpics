@@ -38,8 +38,8 @@ enum key {
   HOURLYVIBE_KEY = 0x2,
   TEMP_KEY = 0x3,
   BACKGROUND_KEY = 0x5,
-//  STEPS_KEY = 0x7,
-  FORMAT_KEY = 0x8
+//  STEPS_KEY = 0x6,
+  FORMAT_KEY = 0x7
 };
 
 static AppSync sync;
@@ -267,10 +267,10 @@ void theme_choice() {
 			s_random = 0;
 		} else {
 
-			temp_random = rand() % 12;
+			temp_random = rand() % 13;
 
 			while(temp_random == s_random){
-			    temp_random = rand() % 12;
+			    temp_random = rand() % 13;
 		    }
 
 		    s_random = temp_random;
@@ -766,7 +766,7 @@ static void window_load(Window *window) {
   gpath_move_to(second_segment_path, grect_center_point(&bounds));
 
   // draw a background if displayed
-  background_image = gbitmap_create_with_resource( RESOURCE_ID_IMAGE_BG40 );
+  background_image = gbitmap_create_with_resource( RESOURCE_ID_IMAGE_BG19 );
   background_layer = bitmap_layer_create( bounds );
   bitmap_layer_set_bitmap( background_layer, background_image );
   GCompOp compositing_mod_back = GCompOpSet;
@@ -778,7 +778,11 @@ static void window_load(Window *window) {
     img_bt_disconnect  = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BLUETOOTH_OFF);
 		
 	// draw the bluetooth image
+#ifdef PBL_PLATFORM_CHALK
 	layer_conn_img  = bitmap_layer_create(GRect(74, 0,  32,  26));
+#else
+	layer_conn_img  = bitmap_layer_create(GRect(57, -3,  32,  26));
+#endif	
     bitmap_layer_set_bitmap(layer_conn_img, img_bt_connect);
 	GCompOp compositing_mode = GCompOpSet;
     bitmap_layer_set_compositing_mode(layer_conn_img, compositing_mode);
@@ -793,11 +797,10 @@ static void window_load(Window *window) {
 	
 
 // setup time layer
-	
 #ifdef PBL_PLATFORM_CHALK
     layer_time_text = text_layer_create(GRect(  0,   34, 180,  80));
 #else
-	layer_time_text = text_layer_create(GRect(0, 5, 144, 80));
+	layer_time_text = text_layer_create(GRect(0, 30, 144, 80));
 #endif
     text_layer_set_background_color(layer_time_text, GColorClear);
     text_layer_set_font(layer_time_text, time_font);
@@ -810,7 +813,7 @@ static void window_load(Window *window) {
 #ifdef PBL_PLATFORM_CHALK
     layer_date_text = text_layer_create(GRect( 0, 114, 180,  30));
 #else
-    layer_date_text = text_layer_create(GRect(0, 95, 144, 30));
+    layer_date_text = text_layer_create(GRect(0, 109, 144, 30));
 #endif
     text_layer_set_background_color(layer_date_text, GColorClear);
     text_layer_set_font(layer_date_text, temp_font);
@@ -820,63 +823,99 @@ static void window_load(Window *window) {
 
 // Setup date format layers
 	
-  layer_date_text1 = text_layer_create(GRect( 0, 114, 180,  30 ));	
+#ifdef PBL_PLATFORM_CHALK
+    layer_date_text1 = text_layer_create(GRect( 0, 114, 180,  30));
+#else
+    layer_date_text1 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text1, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text1, GColorWhite  );
   text_layer_set_background_color(layer_date_text1, GColorClear);
   text_layer_set_font(layer_date_text1, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text1 ) );
   
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text2 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text2 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text2, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text2, GColorWhite  );
   text_layer_set_background_color(layer_date_text2, GColorClear);
   text_layer_set_font(layer_date_text2, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text2 ) );
   
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text3 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text3 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text3, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text3, GColorWhite  );
   text_layer_set_background_color(layer_date_text3, GColorClear);
   text_layer_set_font(layer_date_text3, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text3 ) );
   
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text4 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text4 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text4, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text4, GColorWhite  );
   text_layer_set_background_color(layer_date_text4, GColorClear);
   text_layer_set_font(layer_date_text4, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text4 ) );
   
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text5 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text5 = text_layer_create(GRect(0, 106, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text5, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text5, GColorWhite  );
   text_layer_set_background_color(layer_date_text5, GColorClear);
   text_layer_set_font(layer_date_text5, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text5 ) );
   
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text6 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text6 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text6, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text6, GColorWhite  );
   text_layer_set_background_color(layer_date_text6, GColorClear);
   text_layer_set_font(layer_date_text6, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text6 ) );
   	
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text7 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text7 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text7, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text7, GColorWhite  );
   text_layer_set_background_color(layer_date_text7, GColorClear);
   text_layer_set_font(layer_date_text7, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text7 ) );
 
+#ifdef PBL_PLATFORM_CHALK
   layer_date_text8 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#else
+    layer_date_text8 = text_layer_create(GRect(0, 110, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text8, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text8, GColorWhite  );
   text_layer_set_background_color(layer_date_text8, GColorClear);
   text_layer_set_font(layer_date_text8, temp_font);	  
   layer_add_child( window_layer, text_layer_get_layer( layer_date_text8 ) );
 	
-  layer_date_text9 = text_layer_create(GRect( 0, 121, 180,  30 ));	
+#ifdef PBL_PLATFORM_CHALK
+  layer_date_text9 = text_layer_create(GRect( 0, 126, 180,  30 ));	
+#else
+    layer_date_text9 = text_layer_create(GRect(0, 114, 144, 30));
+#endif
   text_layer_set_text_alignment(layer_date_text9, GTextAlignmentCenter);
   text_layer_set_text_color(layer_date_text9, GColorWhite  );
   text_layer_set_background_color(layer_date_text9, GColorClear);
@@ -885,14 +924,22 @@ static void window_load(Window *window) {
 	
   // draw a background if displayed
   batt_image = gbitmap_create_with_resource( RESOURCE_ID_IMAGE_BATT );
+#ifdef PBL_PLATFORM_CHALK
   batt_layer = bitmap_layer_create( GRect(74,158,32,26) );
+#else
+  batt_layer = bitmap_layer_create( GRect(57,145,32,26) );
+#endif
   bitmap_layer_set_bitmap( batt_layer, batt_image );
   GCompOp compositing_batt = GCompOpSet;
   bitmap_layer_set_compositing_mode(batt_layer, compositing_batt);	
   layer_add_child( window_layer, bitmap_layer_get_layer( batt_layer ) );
 		
   // set up battery text layer
+#ifdef PBL_PLATFORM_CHALK
   battery_text_layer = text_layer_create(GRect(72, 160, 40, 20));	
+#else
+  battery_text_layer = text_layer_create(GRect(56, 148, 40, 20));	
+#endif
   text_layer_set_background_color(battery_text_layer, GColorClear);
   text_layer_set_text_color(battery_text_layer, GColorBlack);
   text_layer_set_font(battery_text_layer, batt_font);
@@ -901,7 +948,11 @@ static void window_load(Window *window) {
 	
   // draw 9 marker
   nine_image = gbitmap_create_with_resource( RESOURCE_ID_IMAGE_9MARK );
+#ifdef PBL_PLATFORM_CHALK
   nine_layer = bitmap_layer_create( GRect(-2,86,26,11) );
+#else
+  nine_layer = bitmap_layer_create(GRect(-20, 78, 26, 11));
+#endif
   bitmap_layer_set_bitmap( nine_layer, nine_image );
   GCompOp compositing_nine = GCompOpSet;
   bitmap_layer_set_compositing_mode(nine_layer, compositing_nine);	
@@ -909,12 +960,16 @@ static void window_load(Window *window) {
 	
   // draw 3 marker
   three_image = gbitmap_create_with_resource( RESOURCE_ID_IMAGE_3MARK );
+#ifdef PBL_PLATFORM_CHALK
   three_layer = bitmap_layer_create( GRect(158,86,26,11) );
+#else
+  three_layer = bitmap_layer_create(GRect(138, 78, 26, 11));
+#endif
   bitmap_layer_set_bitmap( three_layer, three_image );
   GCompOp compositing_three = GCompOpSet;
   bitmap_layer_set_compositing_mode(three_layer, compositing_three);	
   layer_add_child( window_layer, bitmap_layer_get_layer( three_layer ) );
-/*		
+/*	
 // setup steps layer
 	
   steps_label = text_layer_create( GRect(  43, 115, 95,  27 ));
@@ -924,13 +979,13 @@ static void window_load(Window *window) {
   text_layer_set_font(steps_label, temp_font);
   layer_add_child(window_layer, text_layer_get_layer(steps_label));
   layer_set_hidden(text_layer_get_layer(steps_label), true);
-*/	
+*/
 //setup weather layers
 	
 #ifdef PBL_PLATFORM_CHALK
   icon_layer = bitmap_layer_create(GRect(97,  27, 24, 24));
 #else
-  icon_layer = bitmap_layer_create(GRect(57, 26, 24, 24));
+  icon_layer = bitmap_layer_create(GRect(74, 23, 24, 24));
 #endif
   GCompOp compositing_weather = GCompOpSet;
   bitmap_layer_set_compositing_mode(icon_layer, compositing_weather);	
@@ -938,9 +993,9 @@ static void window_load(Window *window) {
 
 	
 #ifdef PBL_PLATFORM_CHALK
-    temp_layer  = text_layer_create(GRect(60,  22, 40,  40 ));
+    temp_layer  = text_layer_create(GRect(60,  22, 40,  30 ));
 #else
-    temp_layer  = text_layer_create(GRect(7, 30, 40, 28));
+    temp_layer  = text_layer_create(GRect(42, 19, 40, 30));
 #endif
 	text_layer_set_background_color(temp_layer, GColorClear);
     text_layer_set_font(temp_layer, temp_font);
